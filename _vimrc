@@ -9,6 +9,7 @@ colors molokai "我最喜欢的配色方案
 set encoding=utf8 "默认编码,可能不需要?
 set autoread "文件更新后自动读取
 set noswapfile "禁用swap文件
+set autochdir "自动切换当前目录
 
 "Tab
 set expandtab
