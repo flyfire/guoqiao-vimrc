@@ -28,7 +28,8 @@ set ruler
 set number
 
 "Search
-set incsearch "search while type
+set incsearch " search while type
+set so=5 " while mv with j or k, the page will start mv 5 lines before the bottom or top
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
