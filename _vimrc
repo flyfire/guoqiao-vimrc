@@ -27,6 +27,9 @@ set nowrap "不自动换行
 set ruler
 set number
 
+"Search
+set incsearch "search while type
+
 "快捷键映射
 let mapleader = "," "触发各种命令映射的快捷键
 
