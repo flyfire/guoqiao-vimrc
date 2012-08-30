@@ -30,8 +30,11 @@ set number
 "Search
 set incsearch "search while type
 
-"快捷键映射
-let mapleader = "," "触发各种命令映射的快捷键
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
+nmap <leader>w :w!<cr> " Fast saving
+nmap <leader>x :x<cr>  " Fast exit
 
 " map ; to :, make cmd easy
 nnoremap ; :
