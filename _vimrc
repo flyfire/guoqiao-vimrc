@@ -28,3 +28,12 @@ set number
 
 "快捷键映射
 let mapleader = "," "触发各种命令映射的快捷键
+
+" tab navigation
+nnoremap tl :tabnext<CR>
+nnoremap th :tabprev<CR>
+nnoremap tn :tabnew<CR>
+nnoremap tc :tabclose<CR>
+
+" plugs
+nnoremap tt :NERDTreeToggle<CR>
