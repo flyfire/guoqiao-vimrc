@@ -29,6 +29,9 @@ set number
 "快捷键映射
 let mapleader = "," "触发各种命令映射的快捷键
 
+" map ; to :, make cmd easy
+nnoremap ; :
+
 " tab navigation
 nnoremap tl :tabnext<CR>
 nnoremap th :tabprev<CR>
