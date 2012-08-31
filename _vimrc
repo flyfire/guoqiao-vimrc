@@ -43,6 +43,7 @@ set tm=500
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
+let g:mapleader = ","
 nmap <leader>w :w!<cr> " Fast saving
 nmap <leader>x :x<cr>  " Fast exit
 nmap <leader>e :e!<cr>  " Fast reload
@@ -84,7 +85,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " auto load vimrc if change
 autocmd! bufwritepost _vimrc source %
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
