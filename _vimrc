@@ -30,6 +30,8 @@ set number
 set cursorline
 " for macvim and win gvim, yank to system clipboard
 set clipboard=unnamed
+set list
+set listchars=tab:>-,trail:- " show tabs and trailing spaces
 
 "Search
 set hlsearch " highlight search
@@ -43,6 +45,9 @@ set novisualbell
 set t_vb=
 set tm=500
 
+" map ; to :, make cmd easy
+nnoremap ; :
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
@@ -50,9 +55,6 @@ nmap <leader>w :w!<cr> " Fast saving
 nmap <leader>x :x<cr>  " Fast exit
 nmap <leader>e :e!<cr>  " Fast reload
 nmap <leader>h :noh<cr>  " Fast rm highlight
-
-" map ; to :, make cmd easy
-nnoremap ; :
 
 " tab navigation
 nnoremap tl :tabnext<CR>
@@ -85,6 +87,7 @@ if has("mac") || has("macunix")
   vmap <D-j> <M-j>
   vmap <D-k> <M-k>
 endif
+
 " plugs
 " Enable filetype plugins
 filetype plugin on
@@ -101,6 +104,8 @@ endfunc
 
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.html :call DeleteTrailingWS()
+autocmd BufWrite *.js :call DeleteTrailingWS()
+autocmd BufWrite *.css :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " auto load vimrc if change
