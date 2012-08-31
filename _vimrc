@@ -30,8 +30,9 @@ set number
 set cursorline
 
 "Search
-set incsearch " search while type
 set hlsearch " highlight search
+set incsearch " search while type
+set ignorecase " ignore case while search
 set so=5 " while mv with j or k, the page will start mv 5 lines before the bottom or top
 
 " No annoying sound on errors
@@ -65,6 +66,23 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l   
 
+" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+nmap <C-down> mz:m+<cr>`z
+nmap <C-up> mz:m-2<cr>`z
+vmap <C-down> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <C-up> :m'<-2<cr>`>my`<mzgv`yo`z
+
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+if has("mac") || has("macunix")
+  nmap <D-j> <M-j>
+  nmap <D-k> <M-k>
+  vmap <D-j> <M-j>
+  vmap <D-k> <M-k>
+endif
 " plugs
 " Enable filetype plugins
 filetype plugin on
@@ -101,7 +119,7 @@ set viminfo^=%
 vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Open vimgrep and put the cursor in the right position
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+map <leader>g :vimgrep // **/*.*<left><left><left><left><left><left><left><left>
 
 " Vimgreps in the current file
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
