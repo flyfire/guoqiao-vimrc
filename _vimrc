@@ -33,6 +33,12 @@ set incsearch " search while type
 set hlsearch " highlight search
 set so=5 " while mv with j or k, the page will start mv 5 lines before the bottom or top
 
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
 let mapleader = ","
