@@ -61,11 +61,23 @@ nnoremap tm :tabmove<CR>
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <C-l> <C-w>l   
 
 " plugs
 nnoremap tt :NERDTreeToggle<CR>
 
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" auto load vimrc if change(seems do not work)
+autocmd! bufwritepost _vimrc source %
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
