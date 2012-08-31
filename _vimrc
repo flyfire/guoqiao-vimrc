@@ -27,6 +27,7 @@ set nowrap "不自动换行
 "set wrap
 set ruler
 set number
+set cursorline
 
 "Search
 set incsearch " search while type
@@ -44,6 +45,7 @@ set tm=500
 let mapleader = ","
 nmap <leader>w :w!<cr> " Fast saving
 nmap <leader>x :x<cr>  " Fast exit
+nmap <leader>e :e!<cr>  " Fast reload
 
 " map ; to :, make cmd easy
 nnoremap ; :
@@ -53,6 +55,7 @@ nnoremap tl :tabnext<CR>
 nnoremap th :tabprev<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
+nnoremap tm :tabmove<CR>
 
 " window nav
 nnoremap <C-h> <C-w>h
