@@ -28,6 +28,8 @@ set nowrap "不自动换行
 set ruler
 set number
 set cursorline
+" for macvim and win gvim, yank to system clipboard
+set clipboard=unnamed
 
 "Search
 set hlsearch " highlight search
