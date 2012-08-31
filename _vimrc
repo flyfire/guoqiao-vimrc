@@ -46,6 +46,7 @@ let mapleader = ","
 nmap <leader>w :w!<cr> " Fast saving
 nmap <leader>x :x<cr>  " Fast exit
 nmap <leader>e :e!<cr>  " Fast reload
+nmap <leader>h :noh<cr>  " Fast rm highlight
 
 " map ; to :, make cmd easy
 nnoremap ; :
@@ -56,6 +57,7 @@ nnoremap th :tabprev<CR>
 nnoremap tn :tabnew<CR>
 nnoremap tc :tabclose<CR>
 nnoremap tm :tabmove<CR>
+nnoremap to :tabonly<CR> " close other tabs
 
 " window nav
 nnoremap <C-h> <C-w>h
@@ -64,6 +66,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l   
 
 " plugs
+" Enable filetype plugins
+filetype plugin on
+filetype indent on
+
 nnoremap tt :NERDTreeToggle<CR>
 
 " Delete trailing white space on save, useful for Python and CoffeeScript ;)
@@ -76,8 +82,40 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
-" auto load vimrc if change(seems do not work)
+" auto load vimrc if change
 autocmd! bufwritepost _vimrc source %
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vimgrep searching and cope displaying
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" When you press gv you vimgrep after the selected text
+vnoremap <silent> gv :call VisualSelection('gv')<CR>
+
+" Open vimgrep and put the cursor in the right position
+map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+
+" Vimgreps in the current file
+map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+" Do :help cope if you are unsure what cope is. It's super useful!
+"
+" When you search with vimgrep, display your results in cope by doing:
+"   <leader>cc
+"
+" To go to the next search result do:
+"   <leader>n
+"
+" To go to the previous search results do:
+"   <leader>p
+"
+map <leader>cc :botright cope<cr>
+map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+map <leader>n :cn<cr>
+map <leader>p :cp<cr>
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
