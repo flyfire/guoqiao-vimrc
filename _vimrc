@@ -55,7 +55,6 @@ set so=5 " while mv with j or k, the page will start mv 5 lines before the botto
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set vb t_vb=
 set tm=500
 
 " map ; to :, make cmd easy
@@ -141,9 +140,6 @@ vnoremap <silent> gv :call VisualSelection('gv')<CR>
 
 " Open vimgrep and put the cursor in the right position
 map <leader>g :vimgrep // **/*.*<left><left><left><left><left><left><left><left>
-
-" Vimgreps in the current file
-map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
 " When you press <leader>r you can search and replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
