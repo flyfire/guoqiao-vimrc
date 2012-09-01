@@ -5,8 +5,12 @@ syntax on "开启语法高亮,否则代码关键字没有颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案
 
-"GUI
-set guifont=Courier_New:h12:cANSI
+" Set extra options when running in GUI mode
+if has("gui_running")
+    set guioptions-=T
+    set guioptions-=m
+    set guifont=Courier_New:h12:cANSI
+endif
 
 "文件
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
@@ -24,6 +28,10 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set smartindent
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l
 
 "代码
 set nowrap "不自动换行
