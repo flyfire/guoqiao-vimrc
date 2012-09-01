@@ -55,7 +55,7 @@ set so=5 " while mv with j or k, the page will start mv 5 lines before the botto
 " No annoying sound on errors
 set noerrorbells
 set novisualbell
-set t_vb=
+set vb t_vb=
 set tm=500
 
 " map ; to :, make cmd easy
@@ -103,6 +103,7 @@ endif
 
 " plugs
 " Enable filetype plugins
+filetype on
 filetype plugin on
 filetype indent on
 
