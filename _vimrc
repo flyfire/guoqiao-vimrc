@@ -4,6 +4,7 @@ set nocompatible "禁用对vi的兼容,否则vim的高级功能很多不能用
 syntax on "开启语法高亮,否则代码关键字没有颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案
+set guifont=Courier_New:h12:cANSI
 
 "文件
 set encoding=utf8 "默认编码,可能不需要?
