@@ -7,8 +7,10 @@ colors molokai "我最喜欢的配色方案
 
 " Set extra options when running in GUI mode
 if has("gui_running")
-    set guioptions-=T
-    set guioptions-=m
+    set guioptions-=T " hide Toolbar
+    set guioptions-=m " hide menu
+    set guioptions-=L " hide Left scrollbar
+    set guioptions-=r " hide right scrollbar
     set guifont=Courier_New:h12:cANSI
 endif
 
