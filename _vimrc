@@ -11,7 +11,9 @@ if has("gui_running")
     set guioptions-=m " hide menu
     set guioptions-=L " hide Left scrollbar
     set guioptions-=r " hide right scrollbar
-    set guifont=Courier_New:h12:cANSI
+    if has('win32')
+        set guifont=Courier_New:h12:cANSI
+    endif
 endif
 
 "文件
