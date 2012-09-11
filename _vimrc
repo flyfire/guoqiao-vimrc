@@ -84,7 +84,7 @@ nnoremap to :tabonly<CR> " close other tabs
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l   
+nnoremap <C-l> <C-w>l
 
 " Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
 nmap <C-down> mz:m+<cr>`z
@@ -104,13 +104,9 @@ if has("mac") || has("macunix")
   vmap <D-k> <M-k>
 endif
 
-" plugs
-" Enable filetype plugins
-filetype on
-filetype plugin on
-filetype indent on
-
 call pathogen#infect()
+" Enable filetype plugins
+filetype plugin indent on
 
 nnoremap tt :NERDTreeToggle<CR>
 nnoremap TT :Tlist<CR>
