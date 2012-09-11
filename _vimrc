@@ -110,6 +110,8 @@ filetype on
 filetype plugin on
 filetype indent on
 
+call pathogen#infect()
+
 nnoremap tt :NERDTreeToggle<CR>
 nnoremap TT :Tlist<CR>
 let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
