@@ -1,9 +1,8 @@
-set nocompatible "禁用对vi的兼容,否则vim的高级功能很多不能用
+set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 
 "颜色
-syntax on "开启语法高亮,否则代码关键字没有颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案
 
@@ -32,30 +31,18 @@ set tabstop=4
 
 "缩进
 set shiftwidth=4
-set autoindent
 set smartindent
 
-" Configure backspace so it acts as it should act
-set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 
 "代码
 set nowrap "不自动换行
-"set wrap
-set ruler
 set number
 set cursorline
 " for macvim and win gvim, yank to system clipboard
-set clipboard=unnamed
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing spaces
 let g:loaded_matchparen=1 " turn off parenthese match
-
-"Search
-set hlsearch " highlight search
-set incsearch " search while type
-set ignorecase " ignore case while search
-set so=5 " while mv with j or k, the page will start mv 5 lines before the bottom or top
 
 " No annoying sound on errors
 set noerrorbells
@@ -94,21 +81,7 @@ nmap <C-up> mz:m-2<cr>`z
 vmap <C-down> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-up> :m'<-2<cr>`>my`<mzgv`yo`z
 
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
-
-if has("mac") || has("macunix")
-  nmap <D-j> <M-j>
-  nmap <D-k> <M-k>
-  vmap <D-j> <M-j>
-  vmap <D-k> <M-k>
-endif
-
 call pathogen#infect()
-" Enable filetype plugins
-filetype plugin indent on
 
 nnoremap tt :NERDTreeToggle<CR>
 nnoremap TT :Tlist<CR>
