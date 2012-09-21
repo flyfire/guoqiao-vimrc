@@ -1,4 +1,6 @@
 set nocompatible "禁用对vi的兼容,否则vim的高级功能很多不能用
+source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
 
 "颜色
 syntax on "开启语法高亮,否则代码关键字没有颜色
