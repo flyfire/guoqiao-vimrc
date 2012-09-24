@@ -21,6 +21,7 @@ endif
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 set autoread "文件更新后自动读取
 set noswapfile "禁用swap文件
+set nobackup "no file with ~
 set autochdir "自动切换当前目录
 set wildignore=*.o,*~,*.pyc " Ignore compiled files
 
