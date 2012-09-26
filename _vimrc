@@ -1,5 +1,5 @@
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
+" source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 
 "颜色
@@ -59,6 +59,7 @@ map <F5> :!python %<cr>
 let mapleader = ","
 nmap <leader>w :w!<cr> " Fast saving
 nmap <leader>x :x<cr>  " Fast exit
+nmap <leader>q :q!<cr>  " Fast exit
 nmap <leader>e :e!<cr>  " Fast reload
 nmap <leader>h :noh<cr>  " Fast rm highlight
 
