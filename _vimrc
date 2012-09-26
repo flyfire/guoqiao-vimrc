@@ -2,6 +2,7 @@ set nocompatible
 " source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 
+filetype plugin indent on
 "颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案
