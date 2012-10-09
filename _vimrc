@@ -40,6 +40,7 @@ set whichwrap+=<,>,h,l
 "代码
 set nowrap "不自动换行
 set number
+set incsearch
 set cursorline cursorcolumn
 " for macvim and win gvim, yank to system clipboard
 set list
