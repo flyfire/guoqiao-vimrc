@@ -38,11 +38,10 @@ set smartindent
 set whichwrap+=<,>,h,l
 
 "代码
-set nowrap "不自动换行
+set nowrap
 set number
 set incsearch
 set cursorline cursorcolumn
-" for macvim and win gvim, yank to system clipboard
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing spaces
 let g:loaded_matchparen=1 " turn off parenthese match
