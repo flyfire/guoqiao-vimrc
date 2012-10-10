@@ -1,6 +1,6 @@
 set nocompatible
-" source $VIMRUNTIME/vimrc_example.vim
-source $VIMRUNTIME/mswin.vim
+source $VIMRUNTIME/vimrc_example.vim
+" source $VIMRUNTIME/mswin.vim
 
 filetype plugin indent on
 "颜色
