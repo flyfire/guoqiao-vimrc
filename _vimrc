@@ -89,18 +89,8 @@ call pathogen#infect()
 nnoremap tt :NERDTreeToggle<CR>
 let g:pydiction_location = '~/.vim/ftplugin/pydiction/complete-dict'
 
-" Delete trailing white space on save, useful for Python and CoffeeScript ;)
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-
-autocmd BufWrite *.py :call DeleteTrailingWS()
-autocmd BufWrite *.html :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-autocmd BufWrite *.css :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
+" Delete trailing white space on save
+autocmd BufWritePre * :%s/\s\+$//ge
 
 " auto load vimrc if change
 autocmd! bufwritepost _vimrc source %
