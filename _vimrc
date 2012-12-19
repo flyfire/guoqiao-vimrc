@@ -15,7 +15,6 @@ if has("gui_running")
     set guioptions-=r " hide right scrollbar
     if has('win32')
         set guifont=Courier_New:h14:cANSI
-        set guifontwide=YaHei\ Consolas\ Hybrid:h12
     endif
 endif
 
@@ -42,7 +41,7 @@ set whichwrap+=<,>,h,l
 set nowrap
 set number
 set incsearch
-set cursorline cursorcolumn
+set cursorline " cursorcolumn
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing spaces
 let g:loaded_matchparen=1 " turn off parenthese match
