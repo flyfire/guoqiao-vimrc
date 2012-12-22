@@ -1,9 +1,10 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 " source $VIMRUNTIME/mswin.vim
-
-filetype on
-filetype plugin on
+" filetype off
+call pathogen#infect()
+" filetype on
+" filetype plugin on
 filetype plugin indent on
 "颜色
 set t_Co=256 "颜色深度,让色彩更丰富
@@ -40,21 +41,37 @@ set smartindent
 set whichwrap+=<,>,h,l
 
 "代码
-set nowrap
-set number
+set gdefault
+set ignorecase
+set smartcase
 set incsearch
+set hlsearch
+
+set wrap
+set relativenumber
+" set textwidth=80
+set colorcolumn=100
 set cursorline " cursorcolumn
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing spaces
 let g:loaded_matchparen=1 " turn off parenthese match
 
 " No annoying sound on errors
-set noerrorbells
-set novisualbell
-set tm=500
+"set noerrorbells
+"set novisualbell
+"set tm=500
 
 " map ; to :, make cmd easy
 nnoremap ; :
+inoremap jj <ESC>
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
+
 map <F5> :!python %<cr>
 
 " With a map leader it's possible to do extra key combinations
@@ -85,8 +102,6 @@ nmap <C-down> mz:m+<cr>`z
 nmap <C-up> mz:m-2<cr>`z
 vmap <C-down> :m'>+<cr>`<my`>mzgv`yo`z
 vmap <C-up> :m'<-2<cr>`>my`<mzgv`yo`z
-
-call pathogen#infect()
 
 nnoremap tt :NERDTreeToggle<CR>
 
@@ -127,8 +142,8 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 " To go to the previous search results do:
 "   <leader>p
 "
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
+" map <leader>cc :botright cope<cr>
+" map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
 map <leader>n :cn<cr>
 map <leader>p :cp<cr>
 
