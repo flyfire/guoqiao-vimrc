@@ -10,6 +10,8 @@ BUNDLE = os.path.join(HERE,'bundle')
 
 GIT_REPOS = (
         'https://github.com/mattn/zencoding-vim',
+        'https://github.com/kevinw/pyflakes-vim.git',
+        'https://github.com/vim-scripts/NERD_Tree-and-ack.git',
         )
 
 def fetch():
@@ -22,7 +24,7 @@ def fetch():
             cwd = path
         else:
             op = 'clone'
-            cwd = HERE
+            cwd = BUNDLE
         cmd = 'git %s %s' % (op,r)
         print '%s in %s' % (cmd,cwd)
         subprocess.call(cmd.split(),cwd=cwd)
