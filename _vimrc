@@ -4,7 +4,7 @@ source $VIMRUNTIME/vimrc_example.vim
 
 filetype on
 filetype plugin on
-filetype indent on
+filetype plugin indent on
 "颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案

@@ -10,39 +10,42 @@ BUNDLE = os.path.join(HERE,'vimfiles','bundle')
 
 GIT_REPOS = (
         'https://github.com/mattn/zencoding-vim',
-        'https://github.com/kevinw/pyflakes-vim.git',
         'https://github.com/scrooloose/nerdtree.git',
+        'https://github.com/mitechie/pyflakes-pathogen.git',
         'https://github.com/vim-scripts/python-imports.vim.git',
         )
 
-def sync():
+def clone():
     for r in GIT_REPOS:
-        name = r.strip('/').split('/')[-1]
+        print 'clone %s ...' % r
+        cmd = 'git clone %s' % (r,)
+        subprocess.call(cmd.split(),cwd=BUNDLE)
+
+def pull():
+    for name in os.listdir(BUNDLE):
         path = os.path.join(BUNDLE,name)
-        print 'processing %s ...' % name
-        if os.path.exists(path):
-            op = 'pull'
-            cwd = path
-        else:
-            op = 'clone'
-            cwd = BUNDLE
-        cmd = 'git %s %s' % (op,r)
-        print '%s in %s' % (cmd,cwd)
-        subprocess.call(cmd.split(),cwd=cwd)
+        if os.path.isdir(path):
+            print 'pull %s ...' % path
+            cmd = 'git pull'
+            subprocess.call(cmd.split(),cwd=path)
 
 def main():
-    i = 3
     if not os.path.exists(BUNDLE):
         os.mkdir(BUNDLE)
     parser = OptionParser()
-    parser.add_option("-s", "--sync",
-                      action="store_true", dest="sync", default=False,
-                      help="sync all repos")
+    parser.add_option("-c", "--clone",
+                      action="store_true", dest="clone", default=False,
+                      help="clone all repos")
+    parser.add_option("-p", "--pull",
+                      action="store_true", dest="pull", default=False,
+                      help="pull all repos")
 
     (options, args) = parser.parse_args()
 
-    if options.sync:
-        sync()
+    if options.clone:
+        clone()
+    elif options.pull:
+        pull()
     else:
         parser.print_help()
 
