@@ -34,6 +34,25 @@ def pull():
             cmd = 'git pull'
             subprocess.call(cmd.split(),cwd=path)
 
+def linux_link():
+    name = os.path.join('~','.vimrc')
+    name_save = os.path.join('~','.vimrc.save')
+    if os.path.exists(name):
+        if os.path.isfile(name):
+            os.rename(name,name_save)
+        elif os.path.islink(name):
+            os.path.remove(name)
+    os.symlink(os.path.join(HERE,'_vimrc'),name)
+
+    name = os.path.join('~','.vim')
+    name_save = os.path.join('~','.vim.save')
+    if os.path.exists(name):
+        if os.path.isdir(name):
+            os.rename(name,name_save)
+        elif os.path.islink(name):
+            os.path.remove(name)
+    os.symlink(os.path.join(HERE,'vimfiles'),name)
+
 def main():
     if not os.path.exists(BUNDLE):
         os.mkdir(BUNDLE)
