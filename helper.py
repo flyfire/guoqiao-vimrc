@@ -11,6 +11,7 @@ BUNDLE = os.path.join(HERE,'vimfiles','bundle')
 GIT_REPOS = (
         'https://github.com/mattn/zencoding-vim',
         'https://github.com/scrooloose/nerdtree.git',
+        'https://github.com/vim-scripts/YankRing.vim.git',
         'https://github.com/mitechie/pyflakes-pathogen.git',
         'https://github.com/vim-scripts/python-imports.vim.git',
         )
