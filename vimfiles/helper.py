@@ -11,7 +11,7 @@ BUNDLE = os.path.join(HERE,'bundle')
 GIT_REPOS = (
         'https://github.com/mattn/zencoding-vim',
         'https://github.com/kevinw/pyflakes-vim.git',
-        'https://github.com/vim-scripts/NERD_Tree-and-ack.git',
+        'https://github.com/scrooloose/nerdtree.git',
         'https://github.com/vim-scripts/python-imports.vim.git',
         )
 
@@ -31,6 +31,9 @@ def sync():
         subprocess.call(cmd.split(),cwd=cwd)
 
 def main():
+    i = 3
+    if not os.path.exists(BUNDLE):
+        os.mkdir(BUNDLE)
     parser = OptionParser()
     parser.add_option("-s", "--sync",
                       action="store_true", dest="sync", default=False,

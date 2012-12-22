@@ -2,7 +2,9 @@ set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
 " source $VIMRUNTIME/mswin.vim
 
-filetype plugin indent on
+filetype on
+filetype plugin on
+filetype indent on
 "颜色
 set t_Co=256 "颜色深度,让色彩更丰富
 colors molokai "我最喜欢的配色方案
@@ -87,7 +89,6 @@ vmap <C-up> :m'<-2<cr>`>my`<mzgv`yo`z
 call pathogen#infect()
 
 nnoremap tt :NERDTreeToggle<CR>
-let g:pydiction_location = '~/.vim/ftplugin/pydiction/complete-dict'
 
 " Delete trailing white space on save
 autocmd BufWritePre * :%s/\s\+$//ge
