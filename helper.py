@@ -6,7 +6,7 @@ import subprocess
 from optparse import OptionParser
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-BUNDLE = os.path.join(HERE,'bundle')
+BUNDLE = os.path.join(HERE,'vimfiles','bundle')
 
 GIT_REPOS = (
         'https://github.com/mattn/zencoding-vim',
