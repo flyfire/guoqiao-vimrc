@@ -1,16 +1,23 @@
 set nocompatible
 source $VIMRUNTIME/vimrc_example.vim
-" source $VIMRUNTIME/mswin.vim
-" filetype off
-call pathogen#infect()
-" filetype on
-" filetype plugin on
-filetype plugin indent on
-"颜色
-set t_Co=256 "颜色深度,让色彩更丰富
-colors molokai "我最喜欢的配色方案
+"source $VIMRUNTIME/mswin.vim
 
-" Set extra options when running in GUI mode
+"===============================
+"plugins
+filetype plugin indent on
+call pathogen#infect()
+
+let g:PythonAutoAddImports = 1 "python imports
+
+nnoremap tt :NERDTreeToggle<CR>
+
+"yankring settings: press f3 to show clipboard list
+nnoremap <silent> <F3> :YRShow<cr>
+inoremap <silent> <F3> <ESC>:YRShow<cr>
+
+"appearence
+
+"GUI
 if has("gui_running")
     set guioptions-=T " hide Toolbar
     set guioptions-=m " hide menu
@@ -21,47 +28,65 @@ if has("gui_running")
     endif
 endif
 
-"文件
+set t_Co=256
+colors molokai
+
+set nowrap
+"if set, cusor will move to next line while hit first or last char
+"set whichwrap+=<,>,h,l,[,]
+
+set number
+"set relativenumber
+
+set textwidth=100
+set colorcolumn=100
+
+set cursorline
+"set cursorcolumn
+
+set list
+set listchars=tab:>-,trail:- " show tabs and trailing spaces
+
+let g:loaded_matchparen=1 " turn off parenthese match
+
+"file
 set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 set autoread "文件更新后自动读取
 set noswapfile "禁用swap文件
 set nobackup "no file with ~
 set autochdir "自动切换当前目录
 set wildignore=*.o,*~,*.pyc " Ignore compiled files
+" Remember info about open buffers on close
+set viminfo^=%
 
-"Tab
+"indent
 set expandtab
 set smarttab
 set tabstop=4
-
-"缩进
 set shiftwidth=4
 set smartindent
 
-set whichwrap+=<,>,h,l
-
-"代码
+"search
 set gdefault
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 
-set wrap
-set relativenumber
-" set textwidth=80
-set colorcolumn=100
-set cursorline " cursorcolumn
-set list
-set listchars=tab:>-,trail:- " show tabs and trailing spaces
-let g:loaded_matchparen=1 " turn off parenthese match
+"key mapping
+"===============================
+"map leader
+" With a map leader it's possible to do extra key combinations
+" like <leader>w saves the current file
+let mapleader = ","
 
-" No annoying sound on errors
-"set noerrorbells
-"set novisualbell
-"set tm=500
+nmap <leader>w :w!<cr>
+nmap <leader>x :x<cr>
+nmap <leader>q :q!<cr>
+nmap <leader>e :e!<cr>
+nmap <leader>h :noh<cr>
 
-" map ; to :, make cmd easy
+"map ; to :, make cmd easy
 nnoremap ; :
 inoremap jj <ESC>
 
@@ -69,19 +94,7 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-nnoremap <silent> <F3> :YRShow<cr>
-inoremap <silent> <F3> <ESC>:YRShow<cr>
-
 map <F5> :!python %<cr>
-
-" With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
-let mapleader = ","
-nmap <leader>w :w!<cr> " Fast saving
-nmap <leader>x :x<cr>  " Fast exit
-nmap <leader>q :q!<cr>  " Fast exit
-nmap <leader>e :e!<cr>  " Fast reload
-nmap <leader>h :noh<cr>  " Fast rm highlight
 
 " tab navigation
 nnoremap tl :tabnext<CR>
@@ -97,14 +110,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <C-down> mz:m+<cr>`z
-nmap <C-up> mz:m-2<cr>`z
-vmap <C-down> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <C-up> :m'<-2<cr>`>my`<mzgv`yo`z
-
-nnoremap tt :NERDTreeToggle<CR>
-
 " Delete trailing white space on save
 autocmd BufWritePre * :%s/\s\+$//ge
 
@@ -116,8 +121,6 @@ autocmd BufReadPost *
      \ if line("'\"") > 0 && line("'\"") <= line("$") |
      \   exe "normal! g`\"" |
      \ endif
-" Remember info about open buffers on close
-set viminfo^=%
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => vimgrep searching and cope displaying
