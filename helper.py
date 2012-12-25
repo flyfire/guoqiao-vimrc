@@ -20,6 +20,7 @@ GIT_REPOS = (
         'https://github.com/vim-scripts/YankRing.vim.git',
         'https://github.com/mitechie/pyflakes-pathogen.git',
         'https://github.com/vim-scripts/python-imports.vim.git',
+        'https://github.com/vim-scripts/Rainbow-Parentheses-Improved-and2.git',
         )
 
 def clone():
