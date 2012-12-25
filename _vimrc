@@ -10,9 +10,11 @@ call pathogen#infect()
 let g:PythonAutoAddImports = 1 "python imports
 
 nnoremap tt :NERDTreeToggle<CR>
+
 nnoremap TT :TlistToggle<CR>
 let Tlist_GainFocus_On_ToggleOpen=1
 let Tlist_Use_Right_Window=1
+let Tlist_Show_One_File=1
 
 "yankring settings: press f3 to show clipboard list
 nnoremap <silent> <F3> :YRShow<cr>
