@@ -32,7 +32,7 @@ if has("gui_running")
     set guioptions-=L " hide Left scrollbar
     set guioptions-=r " hide right scrollbar
     if has('win32')
-        set guifont=Courier_New:h14:cANSI
+        set guifont=Courier_New:h16:cANSI
     endif
 endif
 
@@ -62,7 +62,10 @@ set fileencodings=ucs-bom,utf-8,gbk,big5,latin1
 set autoread "文件更新后自动读取
 set noswapfile "禁用swap文件
 set nobackup "no file with ~
+
 set autochdir "自动切换当前目录
+autocmd BufEnter * silent! lcd %:p:h
+
 set wildignore=*.o,*~,*.pyc " Ignore compiled files
 " Remember info about open buffers on close
 set viminfo^=%
