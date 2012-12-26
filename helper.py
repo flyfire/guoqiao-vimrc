@@ -14,6 +14,7 @@ GIT_REPOS = (
         'https://github.com/tpope/vim-repeat.git',
         'https://github.com/tpope/vim-surround.git',
         'https://github.com/scrooloose/nerdtree.git',
+        'https://github.com/vim-scripts/Auto-Pairs.git',
         'https://github.com/plasticboy/vim-markdown.git',
         'https://github.com/vim-scripts/taglist.vim.git',
         'https://github.com/scrooloose/nerdcommenter.git',
