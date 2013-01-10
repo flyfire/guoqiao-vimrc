@@ -10,6 +10,7 @@ call pathogen#infect()
 let g:PythonAutoAddImports = 1 "python imports
 
 nnoremap tt :NERDTreeToggle<CR>
+nnoremap ti :NERDTree<CR>
 nnoremap TDTreeIgnore = ['\.pyc$']
 let g:NERDTreeDirArrows=0
 
@@ -47,7 +48,6 @@ set nowrap
 set number
 "set relativenumber
 
-set textwidth=100
 set colorcolumn=100
 
 set cursorline
