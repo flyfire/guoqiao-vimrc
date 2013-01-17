@@ -48,10 +48,8 @@ set nowrap
 set number
 "set relativenumber
 
-set colorcolumn=100
-
+"set colorcolumn=100
 set cursorline
-"set cursorcolumn
 
 set list
 set listchars=tab:>-,trail:- " show tabs and trailing spaces
