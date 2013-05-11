@@ -41,7 +41,11 @@ endif
 set t_Co=256
 colors molokai
 
-set nowrap
+"disable bell
+set vb
+set t_vb=
+
+"set nowrap
 "if set, cusor will move to next line while hit first or last char
 "set whichwrap+=<,>,h,l,[,]
 
