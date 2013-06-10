@@ -45,7 +45,7 @@ colors molokai
 set vb
 set t_vb=
 
-set wrap
+set nowrap
 "if set, cusor will move to next line while hit first or last char
 "set whichwrap+=<,>,h,l,[,]
 
