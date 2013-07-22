@@ -1,6 +1,6 @@
 set nocompatible
-source $VIMRUNTIME/vimrc_example.vim
-"source $VIMRUNTIME/mswin.vim
+"source $VIMRUNTIME/vimrc_example.vim
+source $VIMRUNTIME/mswin.vim
 
 "===============================
 "plugins
@@ -99,6 +99,7 @@ nmap <leader>x :x<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>e :e!<cr>
 nmap <leader>h :noh<cr>
+nmap <leader>r :set wrap<cr>
 
 "map ; to :, make cmd easy
 nnoremap ; :
